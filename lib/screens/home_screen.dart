@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:my_first_flutter_app/screens/hotel_screen.dart';
 import 'package:my_first_flutter_app/screens/ticket_view.dart';
 import 'package:my_first_flutter_app/utils/app_info_list.dart';
+import 'package:my_first_flutter_app/widgets/double_text_widget.dart';
 
 import '../utils/app_styles.dart';
 
@@ -64,17 +65,7 @@ class HomeScreen extends StatelessWidget {
                    ),
                ),
                const Gap(40),
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Text("Upcoming Flights",style: Styles.headLineStyle2,),
-                   InkWell(
-                       onTap:() {
-                         print("you are tapped");
-                       },
-                     child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor),))
-                 ],
-               )
+               const AppDoubleTetWidget(bigText: "Upcoming Flights", smallText: "View all")
 
              ],
            ),
@@ -90,17 +81,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels",style: Styles.headLineStyle2,),
-                InkWell(
-                    onTap:() {
-                      print("you are tapped");
-                    },
-                    child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor),))
-              ],
-            ),
+            child: const AppDoubleTetWidget(bigText: "Hotels", smallText: "View all")
           ),
           const Gap(15),
           SingleChildScrollView(
